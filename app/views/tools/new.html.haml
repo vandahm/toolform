@@ -1,0 +1,94 @@
+%h2
+  New Tool Form
+
+.alert.alert-warning
+  This data will not be saved in a database! You must paste the generated Wiki
+  code into the TC Maker Wiki.
+
+
+= form_for @tool, url: tool_path do |f|
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          %h3 Basic Information
+        .panel-body
+          .form-group
+            = f.label :name, "Casual Name"
+            = f.text_field :name, class: 'form-control', placeholder: 'Laser Cutter, Big Table Saw, Bridgeport, etc.'
+          .form-group
+            = f.label :make
+            = f.text_field :make, class: 'form-control', placeholder: 'Jet, DeWalt, etc.'
+          .form-group
+            = f.label :model
+            = f.text_field :model, class: 'form-control', placeholder: 'ABC-123'
+          .form-group
+            = f.label :owner
+            = f.text_field :owner, class: 'form-control', placeholder: "Someone's name, or blank if TC Maker"
+          .form-group
+            = f.label :intro
+            = f.text_area :intro, class: 'form-control', placeholder: 'A sentence or two about the equipment'
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          %h3 Current Status
+        .panel-body
+          .form-group
+            = f.label :area
+            = f.select :area, zone_options, {}, { class: 'form-control' }
+          = f.label :status, "Condition"
+          .radio
+            %label
+              = f.radio_button :status, "works", checked: true
+              Working
+          .radio
+            %label
+              = f.radio_button :status, "borked"
+              Broken
+          .radio
+            %label
+              = f.radio_button :status, "repair"
+              Broken, but we're working on it
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          %h3 Training Requirements
+        .panel-body
+          = f.label :training_required
+          .radio
+            %label
+              = f.radio_button :training_requirements, "none", checked: true
+              None!
+          .radio
+            %label
+              = f.radio_button :training_requirements, "training"
+              You must be trained to use this tool.
+          .radio
+            %label
+              = f.radio_button :training_requirements, "authorization"
+              You must be cleared by shop management before using this tool.
+
+  .panel.panel-default
+    .panel-heading
+      %h3 Details
+    .panel-body
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control', rows: '10'
+      .form-group
+        = f.label :link_to_manual, 'Wiki Link to Manual'
+        = f.text_field :link_to_manual, class: 'form-control'
+      .form-group
+        = f.label :link_to_manual, 'Wiki Link to Image'
+        = f.text_field :link_to_image, class: 'form-control'
+
+  %button.btn.btn-primary.btn-lg{ type: 'submit' }
+    Submit!
+
+
+
+
+
+
+- # :owner, :make, :model, :training_required, :status, :link_to_manual, :link_to_image

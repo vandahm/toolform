@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+    %h2
+      Wiki Code for #{ @tool.name }
+    %p
+      What happens next, for the time being, is manual and annoying. If the Wiki
+      ends up being used, there are ways to make this more automatic.
+    %ol
+      %li Sign into <a href="http://www.tcmaker.org/wiki/index.php?title=Main_Page"> The TC Maker Wiki</a>.
+      %li Create a new page called <code>#{@tool.name}</code>
+      %li Paste in the Wiki Code.
+      %li Save the Wiki page.
+
+.row
+  .col-md-12
+    %h3 Generated Wiki Code
+    %pre
+      = preserve do
+        = render 'wikitext'

@@ -1,0 +1,13 @@
+{{Equipment
+|CommonName=<%= @tool.name %>
+|Area=<%= @tool.area_in_words %>
+|Owner=<%= @tool.owner.empty? ? 'TC Maker' : @tool.owner %>
+|Make=<%= @tool.make %>
+|Model=<%= @tool.model %>
+|TrainingRequirements=<%= @tool.training_requirements_in_words %>
+|LinkToImage=<%= @tool.link_to_image %>
+|Status=<%= @tool.status_in_words %>
+|Intro=<%= @tool.intro %>
+|Description=<%= @tool.description %>
+|LinkToManual=<%= @tool.link_to_manual %>
+}}
