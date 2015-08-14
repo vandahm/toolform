@@ -5,9 +5,24 @@
 |Make=<%= @tool.make %>
 |Model=<%= @tool.model %>
 |TrainingRequirements=<%= @tool.training_requirements_in_words %>
-|LinkToImage=<%= @tool.link_to_image %>
+|EquipmentImage=<%= @tool.link_to_image %>
 |Status=<%= @tool.status_in_words %>
 |Intro=<%= @tool.intro %>
 |Description=<%= @tool.description %>
-|LinkToManual=<%= @tool.link_to_manual %>
+|EquipmentManual=<%= @tool.link_to_manual %>
 }}
+
+<%= @tool.intro %>
+
+==Description==
+<%= @tool.description %>
+==Safety==
+<%= @tool.safety %>
+==Instructions==
+<%= @tool.instructions %>
+==Cleanup==
+<%= @tool.cleanup %>
+==Maintenance==
+<%= @tool.maintenance %>
+==Additional Information==
+<%= @tool.additional_info %>

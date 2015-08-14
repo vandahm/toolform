@@ -1,6 +1,20 @@
 class Tool
   include ActiveModel::Model
-  attr_accessor :name, :area, :owner, :make, :model, :training_requirements, :status, :link_to_manual, :link_to_image, :intro, :description
+
+  # Basic Information
+  attr_accessor :name, :intro, :owner, :make, :model
+
+  # Authorization
+  attr_accessor :training_requirements
+
+  # Status
+  attr_accessor :area, :status
+
+  # Assets
+  attr_accessor :link_to_image, :link_to_manual
+
+  # Text
+  attr_accessor :description, :safety, :instructions, :maintenance, :additional_info, :cleanup
 
   ZONES = {
     artifactory: 'Artifactory',

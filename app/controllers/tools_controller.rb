@@ -17,8 +17,8 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :make, :model, :owner, :area, :status,
+    params.require(:tool).permit(:intro, :instructions, :cleanup, :maintenance, :name, :make, :model, :owner, :area, :status,
                                  :training_requirements, :description, :link_to_manual,
-                                 :link_to_image)
+                                 :link_to_image, :additional_info, :safety)
   end
 end
